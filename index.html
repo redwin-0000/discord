@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./index.js" defer></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              backgroundImage: {
+                "flag":"url('./assets/icon/flag.png')",
+                "logo":"url('./assets/icon/logo.png')",
+                "mail":"url('./assets/icon/mail.svg')",
+                "menu": "url('./assets/icon/menu.svg')",
+                "svg1": "url('./assets/1.svg')",
+                "svg2": "url('./assets/2.svg')",
+                "svg3": "url('./assets/3.svg')",
+                "svg4": "url('./assets/4.svg')",
+                "svg5": "url('./assets/5.svg')",
+                "hero-bg": "url('./assets/hero-bg.svg')",
+                "hero-left": "url('./assets/hero-left.svg')",
+                "hero-right": "url('./assets/hero-right.svg')",
+              },                                   
+            },
+          },
+        };
+      </script>
+</head>
+<body>
+   <!-- nav-bar -->
+   <div class="text-white bg-blue-700">
+   <nav class="flex flex-row justify-between item-center relative p-4 mx-auto pt-5 z-10">
+    <div>
+      <img class="h-8 cursor-pointer " src="./assets/icon/logo.png" />
+    </div>
+    <div class="flex gap-8 font-medium md:flex item-center justify-center xl:gap-10 hidden">
+      <a class="hover:underline" href="">Download</a>
+      <a class="hover:underline"href="">Nitro</a>
+      <a class="hover:underline" href="">Discover</a>
+      <a class="hover:underline" href="">Safety</a>
+      <a class="hover:underline" href="">Support</a>
+      <a class="hover:underline" href="">Blog</a>
+      <a class="hover:underline" href="">Careers</a>
+    </div>
+    <div class="flex gap-4">
+      <button class="bg-white text-[#000000] hover:text-[#404eed] px-4 p-1 rounded-2xl text-sm">
+        Open Discord
+      </button>
+      <button class="flex md:hidden" onclick="menuToggler()">
+        <img src="assets/icon/menu.svg" alt="menu" class="h-8" />
+      </button>
+    </div>
+   </nav>
+  </div>
+
+  <div
+  class="bg-white min-h-screen z-100 w-[300px] z-[100] fixed top-0 right-0 transition-all duration-200 ease-in translate-x-[650px] delay-200 side-menu flex rounded-tl-lg flex-col md:hidden"
+>
+  <!--  -->
+  <div
+    class="flex justify-between items-center h-16 w-[100%] px-4 rounded-tl-lg p-12 font-extrabold"
+  >Discord
+    <!-- <img src="./assets/icon/logo.png" alt="" /> -->
+    <img
+      src="./assets/icon/close.svg"
+      alt=""
+      class="h-8"
+      onclick="menuToggler()"
+    />
+   
+  </div>
+  <!--  -->
+  <div class="h-[1px] bg-[#d3d3d3] w-[80%] self-center"></div>
+  <!--  -->
+  <ul class="bg-white p-8 flex flex-col gap-4 font-normal text-[#1f1f1f]">
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Home
+    </li>
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Download
+    </li>
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Nitro
+    </li>
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Discover
+    </li>
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Safety
+    </li>
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Mod Academy 
+    </li>
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Support
+    </li>
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Blog
+    </li>
+    <li
+      class="hover:text-[#00b0f4] p-1 hover:underline hover:cursor-pointer font-light"
+    >
+      Careers
+    </li>
+  </ul>
+  <!--  -->
+  <!--  -->
+  <div class="bg-white w-[100%] grow flex items-center px-4">
+    <button
+      class="bg-[#5865f2] flex items-center justify-between text-white h-10 gap-2 p-2 rounded-2xl"
+    >
+      <!-- <img src="./assets/icon/download.svg" alt="download" class="h-7" /> -->
+      <h5 class="text-sm font-[orbitron]">Download for Linux</h5>
+    </button>
+  </div>
+  <!-- -->
+</div>
+  <!--  -->
+  <div class="bg-[#404eed] flex items-center justify-start lg:justify-center z-[10] h-auto md:h-[700px] lg:h-[500px] overflow-hidden flex-col md:flex-row md:bg-hero-bg bg-no-repeat bg-cover">
+  <img src="assets/hero-left.svg" alt="hero-left-image" class="self-end z-[30] relative hidden lg:flex"/>
+  <!--  -->
+  <!--  -->
+  <div class="lg:w-[650px] w-[100%] md:w-[80%] z-[30] lg:text-center flex flex-col gap-7 lg:gap-10 px-12 lg:px-0 overflow-visible">
+    <h1 class="w-[80%] lg:w-[650px]  text-white text-5xl lg:text-6xl font-extrabold min-w-fit mt-16 md:mt-0 " >IMAGINE A PLACE... </h1>
+    <h3 class="text-white font-[10px]">
+      ...where you can belong to a school club, a gaming group, or a
+      worldwide art community.<br/> Where just you and a handful of friends can
+      spend time together. A place that makes it <br/> easy to talk every day and
+      hang out more often.
+    </h3>
+    <div
+      class="flex self-start lg:self-center gap-5 lg:flex-row md:flex-col flex-row flex-wrap">
+      <button class="bg-white px-12 py-4 rounded-full hover:text-blue-400">Download for Linux</button>
+      <button class=" px-5 md:px-12 py-4 rounded-full  text-white bg-gray-800 hover:bg-gray-700"> Open Discord in your browser</button>
+    </div>
+  </div>
+  <!--  -->
+  <!--  -->
+  <img src="assets/hero-right.svg" alt="hero-right-image" class="self-end z-[30] relative hidden lg:flex"/>
+  <div class="self-end z-30 absolute right-0 hidden md:flex lg:hidden">
+    <img src="assets/hero-right.svg" alt="hero-right-image"class="h-[300px]"/>
+  </div>
+
+  <img src="assets/hero-left.svg" alt=""class="flex md:hidden h-60 self-center pt-10"/>
+</div>
+
+<section class="flex bg-white lg:p-16">
+  <div class="flex bg-white container mx-auto items-center justify-center lg:gap-32 flex-col lg:flex-row">
+    <img src="./assets/1.svg" alt="" class="h-[500px]" />
+    <div class="w-[350px] flex flex-col gap-10 py-5">
+      <h2 class="text-[#23272a] text-4xl font-semibold font-serif">
+        Create an invite-only place where you belong
+      </h2>
+      <h4 class="text-[#23272a] font-serif">
+        Discord servers are organized into topic-based channels where you
+        can collaborate, share, and just talk about your day without
+        clogging up a group chat.
+      </h4>
+    </div>
+  </div>
+</section>
+<!--  -->
+<!--  -->
+<section class="flex  lg:p-16 bg-[#f6f6f6]">
+  <div class="flex bg-gray-100 container mx-auto items-center justify-center lg:gap-32 flex-col lg:flex-row">  
+    <div class="w-[350px] flex flex-col gap-5 py-5">
+      <h2 class="text-[#23272a] text-4xl  font-semibold font-serif">
+        Create an invite-only place where you belong
+      </h2>
+      <h4 class="text-[#23272a] font-serif text-center">
+        Discord servers are organized into topic-based channels where you
+        can collaborate, share, and just talk about your day without
+        clogging up a group chat.
+      </h4>
+    </div>
+    <img src="./assets/2.svg" alt="" class="h-[500px]" />
+  </div>
+</section>
+<!--  -->
+<!--  -->
+<section class="flex bg-white lg:p-16">
+  <div class="flex bg-white container mx-auto items-center justify-center lg:gap-32 flex-col lg:flex-row">
+    <img src="./assets/3.svg" alt="" class="h-[500px]" />
+    <div class="w-[350px] flex flex-col gap-5 py-5">
+      <h2 class="text-[#23272a] text-4xl font-semibold font-serif">
+        Create an invite-only place where you belong
+      </h2>
+      <h4 class="text-[#23272a] font-serif text-center">
+        Discord servers are organized into topic-based channels where you
+        can collaborate, share, and just talk about your day without
+        clogging up a group chat.
+      </h4>
+    </div>   
+  </div>
+</section>
+<!--  -->
+
+<section class="flex bg-[#f6f6f6] py-5">
+  <div class="container mx-auto flex items-center flex-col gap-10 p-5 md:p-0">
+    <h1 class="font-serif text-5xl font-bold">
+      Reliable tech for staying close
+    </h1>
+    <h4 class="lg:w-[900px] text-center text-[18px] text-[#758283]">
+      Low-latency voice and video feels like you’re in the same room. Wave
+      hello over video, watch friends stream their games, or gather up and
+      have a drawing session with screen share.
+    </h4>
+    <img src="./assets/4.svg" alt="" class="md:h-[700px]" />
+    <img  src="./assets/icon/bar-line.svg" alt="" class="relative bottom-0 z-300 left-0 hidden md:flex"/>
+    <h4 class="relative  text-3xl font-semibold mt-18 md:mt-0">
+      Ready to start your journey?
+    </h4>
+    <img src="./assets/star.svg" alt="" class="h-12 -mt-24 hidden sm:block" />
+    <button class="text-white bg-[#5865f2] flex items-center justify-center px-5 py-2 rounded-full gap-2 self-start md:self-center">
+   <h3 class="text-xl">Download for Linux</h3>
+    </button>
+  </div>
+</section>
+<!--  -->
+
+<footer class="bg-[#23272a] flex p-16 flex-col">
+  <div
+    class="container mx-auto flex flex-row justify-between items-center flex-wrap"
+  >
+    <!-- footer-section-1-start -->
+    <div class="flex flex-col gap-5 mr-32">
+      <h2 class="text-[#5865f2] font-black text-4xl w-[150px]">
+        Imagine a place
+      </h2>
+      <div
+        class="flex text-white gap-2 items-center justify-start w-[150px]"
+      >
+        <img src="./assets/icon/flag.png" alt="" class="h-4" />
+        <span>English,USA</span>
+      </div>
+      
+<div class="flex flex-row w-[180px] items-center justify-between">
+  <img src="./assets/facebook.svg" alt="fb" class="h-8" />
+  <img src="./assets/instagram.svg" alt="insta" class="h-8" />
+  <img src="./assets/twitter.svg" alt="twitter" class="h-8" />
+  <img src="./assets/youtube.svg" alt="yt" class="h-8"/>
+</div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <div
+      class="flex flex-row justify-start items-start grow flex-wrap xl:gap-[200px] md:gap-[100px] gap-5 pt-10"
+    >
+      <ul class="text-white flex gap-2 flex-col">
+        <li class="text-[#5865f2]">Product</li>
+        <li class="hover:underline hover:cursor-pointer">Download</li>
+        <li class="hover:underline hover:cursor-pointer">Nitro</li>
+        <li class="hover:underline hover:cursor-pointer">Status</li>
+      </ul>
+      <ul class="text-white flex gap-2 flex-col">
+        <li class="text-[#5865f2]">Company</li>
+        <li class="hover:underline hover:cursor-pointer">About</li>
+        <li class="hover:underline hover:cursor-pointer">Jobs</li>
+        <li class="hover:underline hover:cursor-pointer">Branding</li>
+        <li class="hover:underline hover:cursor-pointer">Newsroom</li>
+      </ul>
+      <ul class="text-white flex gap-2 flex-col">
+        <li class="text-[#5865f2]">Resources</li>
+        <li class="hover:underline hover:cursor-pointer">College</li>
+        <li class="hover:underline hover:cursor-pointer">Support</li>
+        <li class="hover:underline hover:cursor-pointer">Safety</li>
+        <li class="hover:underline hover:cursor-pointer">Blog</li>
+        <li class="hover:underline hover:cursor-pointer">Feedback</li>
+        <li class="hover:underline hover:cursor-pointer">Developer</li>
+        <li class="hover:underline hover:cursor-pointer">Streamkit</li>
+        <li class="hover:underline hover:cursor-pointer">Creators</li>
+        <li class="hover:underline hover:cursor-pointer">Community</li>
+      </ul>
+      <ul class="text-white flex gap-2 flex-col">
+        <li class="text-[#5865f2]">Policies</li>
+        <li class="hover:underline hover:cursor-pointer">Terms</li>
+        <li class="hover:underline hover:cursor-pointer">Privacy</li>
+        <li class="hover:underline hover:cursor-pointer">
+          Cookie Settings
+        </li>
+        <li class="hover:underline hover:cursor-pointer">Guidlines</li>
+        <li class="hover:underline hover:cursor-pointer">
+          Acknowledgement
+        </li>
+        <li class="hover:underline hover:cursor-pointer">Licenses</li>
+        <li class="hover:underline hover:cursor-pointer">Moderation</li>
+      </ul>
+    </div>
+    <!--  -->
+  </div>
+  <div class="bg-[#5865f2] h-[2px] flex-grow m-4 w-[90%] self-center"></div>
+  <div class="container mx-auto flex justify-between  items-center">
+    <img src="./assets/icon/logo.png" alt="" />
+    <button
+      class="bg-[#5865f2] text-white px-3 py-1 rounded-full font-light"
+    >
+      Open Discord
+    </button>
+  </div>
+</footer>
+
+</body>
+</html>
